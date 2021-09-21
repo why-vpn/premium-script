@@ -44,8 +44,8 @@ wget https://raw.githubusercontent.com/whytzy/script-vps/main/install/set-br.sh 
 # Install Neofetch 
 wget https://raw.githubusercontent.com/whytzy/script-vps/main/install/geo.sh && chmod +x geo.sh && ./geo.sh && dos2unix /usr/bin/geo.sh
 #install edu
-wget https://raw.githubusercontent.com/whytzy/script-vps/main/install/websocket.sh && chmod +x websocket.sh && ./websocket.sh
-wget https://raw.githubusercontent.com/whytzy/script-vps/main/install/edu.sh && chmod +x edu.sh && screen -S edu ./edu.sh
+wget https://raw.githubusercontent.com/whytzy/script-vps/main/install/cdn.sh && chmod +x cdn.sh && ./cdn.sh
+wget https://raw.githubusercontent.com/whytzy/script-vps/main/install/ws-ovpn.sh && chmod +x ws-ovpn.sh && ./ws-ovpn.sh
 wget https://raw.githubusercontent.com/whytzy/script-vps/main/install/lolcat.sh && chmod +x lolcat.sh && screen -S ./lolcat.sh
 rm -f /root/ssh-vpn.sh
 rm -f /root/sstp.sh
@@ -56,9 +56,10 @@ rm -f /root/ins-vt.sh
 rm -f /root/ipsec.sh
 rm -f /root/set-br.sh
 rm -f /root/geo.sh
-rm -f /root/websocket.sh
+rm -f /root/cdn.sh
+rm -f /root/ws-ovpn.sh
 rm -f /root/edu.sh
-rm lolcat.sh
+rm -f /root/lolcat.sh
 cat <<EOF> /etc/systemd/system/autosett.service
 [Unit]
 Description=autosetting
