@@ -47,6 +47,10 @@ wget https://raw.githubusercontent.com/whytzy/script-vps/main/install/geo.sh && 
 wget https://raw.githubusercontent.com/whytzy/script-vps/main/install/cdn.sh && chmod +x cdn.sh && ./cdn.sh
 wget https://raw.githubusercontent.com/whytzy/script-vps/main/install/ws-ovpn.sh && chmod +x ws-ovpn.sh && ./ws-ovpn.sh
 wget https://raw.githubusercontent.com/whytzy/script-vps/main/install/lolcat.sh && chmod +x lolcat.sh && screen -S ./lolcat.sh
+#install ohp-server
+wget https://raw.githubusercontent.com/whytzy/script-vps/main/install/ohp-db.sh && chmod +x ohp-db.sh && ./ohp-db.sh 
+wget https://raw.githubusercontent.com/whytzy/script-vps/main/install/ohp-ovpn.sh && chmod +x ohp-ovpn.sh && ./ohp-ovpn.sh
+
 rm -f /root/ssh-vpn.sh
 rm -f /root/sstp.sh
 rm -f /root/wg.sh
@@ -60,6 +64,9 @@ rm -f /root/cdn.sh
 rm -f /root/ws-ovpn.sh
 rm -f /root/edu.sh
 rm -f /root/lolcat.sh
+rm -f /root/ohp-db.sh
+rm -f /root/ohp-ovpn.sh
+
 cat <<EOF> /etc/systemd/system/autosett.service
 [Unit]
 Description=autosetting
@@ -90,7 +97,7 @@ echo ""  | tee -a log-install.txt
 echo "   >>> Service & Port"  | tee -a log-install.txt
 echo "   - OpenSSH                 : 22"  | tee -a log-install.txt
 echo "   - OpenVPN                 : TCP 1194, UDP 2200, SSL 442"  | tee -a log-install.txt
-echo "   - Stunnel4                : 222, 777"  | tee -a log-install.txt
+echo "   - Stunnel4                : 443, 777"  | tee -a log-install.txt
 echo "   - Dropbear                : 109, 143"  | tee -a log-install.txt
 echo "   - Squid Proxy             : 3128, 8080 (limit to IP Server)"  | tee -a log-install.txt
 echo "   - Badvpn                  : 7100, 7200, 7300"  | tee -a log-install.txt
